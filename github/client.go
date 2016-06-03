@@ -268,6 +268,23 @@ func (client *Client) Release(project *Project, tagName string) (release *octoki
 	return
 }
 
+func (client *Client) FetchLatestRelease(project *Project) (release *Release, err error) {
+	api, err := client.simpleApi()
+	if err != nil {
+		return
+	}
+
+	res, err := api.Get(fmt.Sprintf("repos/%s/%s/releases/latest", project.Owner, project.Name))
+	if err = checkStatus(200, "fetching latest release", res, err); err != nil {
+		return
+	}
+
+	release = &Release{}
+	err = res.Unmarshal(release)
+
+	return
+}
+
 func (client *Client) CreateRelease(project *Project, params octokit.ReleaseParams) (release *octokit.Release, err error) {
 	url, err := octokit.ReleasesURL.Expand(octokit.M{"owner": project.Owner, "repo": project.Name})
 	if err != nil {
