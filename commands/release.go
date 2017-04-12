@@ -23,6 +23,11 @@ var (
 		Short: "Retrieve releases from GitHub",
 		Long:  `Retrieves releases from GitHub for the project that the "origin" remote points to.`}
 
+	cmdLatestRelease = &Command{
+		Key: "latest",
+		Run: latestRelease,
+	}
+
 	cmdCreateRelease = &Command{
 		Key:   "create",
 		Run:   createRelease,
@@ -51,6 +56,8 @@ If "-p" is given, it creates a pre-release.
 )
 
 func init() {
+	cmdLatestRelease.Flag.BoolVarP(&flagReleaseShowDownloads, "show-downloads", "d", false, "DRAFTS")
+
 	cmdCreateRelease.Flag.BoolVarP(&flagReleaseDraft, "draft", "d", false, "DRAFT")
 	cmdCreateRelease.Flag.BoolVarP(&flagReleasePrerelease, "prerelease", "p", false, "PRERELEASE")
 	cmdCreateRelease.Flag.VarP(&flagReleaseAssets, "attach", "a", "ATTACH_ASSETS")
@@ -58,6 +65,7 @@ func init() {
 	cmdCreateRelease.Flag.StringVarP(&flagReleaseFile, "file", "f", "", "FILE")
 
 	cmdRelease.Use(cmdCreateRelease)
+	cmdRelease.Use(cmdLatestRelease)
 	CmdRunner.Use(cmdRelease)
 }
 
@@ -150,6 +158,44 @@ func createRelease(cmd *Command, args *Args) {
 
 		ui.Printf("\n%s\n", release.HTMLURL)
 	})
+}
+
+func latestRelease(cmd *Command, args *Args) {
+	localRepo, err := github.LocalRepo()
+	utils.Check(err)
+
+	project, err := localRepo.MainProject()
+	utils.Check(err)
+
+	gh := github.NewClient(project.Host)
+
+	release, err := gh.FetchLatestRelease(project)
+	utils.Check(err)
+	body := strings.TrimSpace(release.Body)
+
+	// Print the release name if it's not empty, otherwise print
+	// the tag name.
+	if release.Name != "" {
+		ui.Println(release.Name)
+	} else {
+		ui.Println(release.TagName)
+	}
+
+	if body != "" {
+		ui.Printf("\n%s\n", body)
+	}
+	if flagReleaseShowDownloads {
+		ui.Printf("\n## Downloads\n\n")
+		for _, asset := range release.Assets {
+			ui.Println(asset.DownloadUrl)
+		}
+		if release.ZipballUrl != "" {
+			ui.Println(release.ZipballUrl)
+			ui.Println(release.TarballUrl)
+		}
+	}
+
+	os.Exit(0)
 }
 
 type assetUploader struct {
