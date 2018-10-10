@@ -7,8 +7,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/github/hub/git"
-	"github.com/github/hub/utils"
+	"github.com/acquia/hub/git"
+	"github.com/acquia/hub/utils"
 )
 
 type Project struct {

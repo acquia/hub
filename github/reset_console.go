@@ -5,7 +5,7 @@ package github
 import (
 	"os"
 
-	"github.com/github/hub/cmd"
+	"github.com/acquia/hub/cmd"
 )
 
 func setConsole(cmd *cmd.Cmd) {

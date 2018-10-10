@@ -3,7 +3,7 @@ Feature: hub delete
     Given I am "andreasbaumann" on github.com with OAuth token "OTOKEN"
 
   Scenario: No argument in current repo
-    Given I am in "git://github.com/github/hub.git" git repo
+    Given I am in "git://github.com/acquia/hub.git" git repo
     When I run `hub delete`
     Then the exit status should be 1
     And the stderr should contain exactly:

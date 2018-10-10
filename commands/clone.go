@@ -5,8 +5,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/github/hub/github"
-	"github.com/github/hub/utils"
+	"github.com/acquia/hub/github"
+	"github.com/acquia/hub/utils"
 )
 
 var cmdClone = &Command{

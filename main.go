@@ -5,9 +5,9 @@ package main
 import (
 	"os"
 
-	"github.com/github/hub/commands"
-	"github.com/github/hub/github"
-	"github.com/github/hub/ui"
+	"github.com/acquia/hub/commands"
+	"github.com/acquia/hub/github"
+	"github.com/acquia/hub/ui"
 )
 
 func main() {

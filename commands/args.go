@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/github/hub/cmd"
+	"github.com/acquia/hub/cmd"
 )
 
 type Args struct {

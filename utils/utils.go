@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/github/hub/ui"
+	"github.com/acquia/hub/ui"
 )
 
 func Check(err error) {

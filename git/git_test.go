@@ -7,7 +7,7 @@ import (
 	"testing"
 
 	"github.com/bmizerany/assert"
-	"github.com/github/hub/fixtures"
+	"github.com/acquia/hub/fixtures"
 )
 
 func TestGitDir(t *testing.T) {

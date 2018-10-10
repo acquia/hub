@@ -29,7 +29,7 @@ feature is a good idea for hub if it improves some workflow for a GitHub user.
 ## How to install dependencies and run tests
 
 1. Clone hub:
-    `git clone https://github.com/github/hub.git && cd hub`
+    `git clone https://github.com/acquia/hub.git && cd hub`
 2. Verify that existing tests pass:
     `make test-all`
 3. Create a topic branch:

@@ -1,6 +1,6 @@
 Feature: hub pr list
   Background:
-    Given I am in "git://github.com/github/hub.git" git repo
+    Given I am in "git://github.com/acquia/hub.git" git repo
     And I am "defunkt" on github.com with OAuth token "OTOKEN"
 
   Scenario: List pulls

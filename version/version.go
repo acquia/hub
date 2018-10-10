@@ -3,7 +3,7 @@ package version
 import (
 	"fmt"
 
-	"github.com/github/hub/git"
+	"github.com/acquia/hub/git"
 )
 
 var Version = "2.5.1"

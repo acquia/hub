@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"regexp"
 
-	"github.com/github/hub/git"
-	"github.com/github/hub/github"
-	"github.com/github/hub/utils"
+	"github.com/acquia/hub/git"
+	"github.com/acquia/hub/github"
+	"github.com/acquia/hub/utils"
 )
 
 var cmdCheckout = &Command{

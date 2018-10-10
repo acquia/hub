@@ -9,10 +9,10 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/github/hub/git"
-	"github.com/github/hub/ui"
-	"github.com/github/hub/utils"
-	"github.com/github/hub/version"
+	"github.com/acquia/hub/git"
+	"github.com/acquia/hub/ui"
+	"github.com/acquia/hub/utils"
+	"github.com/acquia/hub/version"
 )
 
 const (

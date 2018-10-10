@@ -7,9 +7,9 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/github/hub/cmd"
-	"github.com/github/hub/ui"
-	"github.com/github/hub/utils"
+	"github.com/acquia/hub/cmd"
+	"github.com/acquia/hub/ui"
+	"github.com/acquia/hub/utils"
 )
 
 var cmdHelp = &Command{

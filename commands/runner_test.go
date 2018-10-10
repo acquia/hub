@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/bmizerany/assert"
-	"github.com/github/hub/cmd"
+	"github.com/acquia/hub/cmd"
 )
 
 func TestRunner_splitAliasCmd(t *testing.T) {

@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/github/hub/cmd"
+	"github.com/acquia/hub/cmd"
 )
 
 var GlobalFlags []string

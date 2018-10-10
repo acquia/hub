@@ -65,7 +65,7 @@ $ sudo pacman -S hub
 #### Standalone
 
 `hub` can be easily installed as an executable. Download the latest
-[compiled binaries](https://github.com/github/hub/releases) and put it anywhere
+[compiled binaries](https://github.com/acquia/hub/releases) and put it anywhere
 in your executable path.
 
 #### Source
@@ -73,8 +73,8 @@ in your executable path.
 With your [GOPATH](https://github.com/golang/go/wiki/GOPATH) already set up:
 
 ``` sh
-$ go get github.com/github/hub
-$ cd "$GOPATH"/src/github.com/github/hub
+$ go get github.com/acquia/hub
+$ cd "$GOPATH"/src/github.com/acquia/hub
 $ make install prefix=/usr/local
 ```
 
@@ -130,13 +130,13 @@ These scripts complement existing completion scripts that ship with git.
 
 [Installation instructions](etc)
 
-* [hub bash completion](https://github.com/github/hub/blob/master/etc/hub.bash_completion.sh)
-* [hub zsh completion](https://github.com/github/hub/blob/master/etc/hub.zsh_completion)
-* [hub fish completion](https://github.com/github/hub/blob/master/etc/hub.fish_completion)
+* [hub bash completion](https://github.com/acquia/hub/blob/master/etc/hub.bash_completion.sh)
+* [hub zsh completion](https://github.com/acquia/hub/blob/master/etc/hub.zsh_completion)
+* [hub fish completion](https://github.com/acquia/hub/blob/master/etc/hub.fish_completion)
 
 Meta
 ----
 
-* Home: <https://github.com/github/hub>
-* Bugs: <https://github.com/github/hub/issues>
-* Authors: <https://github.com/github/hub/contributors>
+* Home: <https://github.com/acquia/hub>
+* Bugs: <https://github.com/acquia/hub/issues>
+* Authors: <https://github.com/acquia/hub/contributors>

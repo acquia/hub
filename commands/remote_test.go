@@ -2,7 +2,7 @@ package commands
 
 import (
 	"github.com/bmizerany/assert"
-	"github.com/github/hub/github"
+	"github.com/acquia/hub/github"
 	"os"
 	"regexp"
 	"testing"

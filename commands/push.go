@@ -3,8 +3,8 @@ package commands
 import (
 	"strings"
 
-	"github.com/github/hub/github"
-	"github.com/github/hub/utils"
+	"github.com/acquia/hub/github"
+	"github.com/acquia/hub/utils"
 )
 
 var cmdPush = &Command{

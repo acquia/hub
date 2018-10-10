@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/github/hub/ui"
+	"github.com/acquia/hub/ui"
 	flag "github.com/ogier/pflag"
 )
 

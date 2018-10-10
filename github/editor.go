@@ -10,8 +10,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/github/hub/cmd"
-	"github.com/github/hub/git"
+	"github.com/acquia/hub/cmd"
+	"github.com/acquia/hub/git"
 )
 
 func NewEditor(filename, topic, message string) (editor *Editor, err error) {

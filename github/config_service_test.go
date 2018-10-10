@@ -7,7 +7,7 @@ import (
 	"testing"
 
 	"github.com/bmizerany/assert"
-	"github.com/github/hub/fixtures"
+	"github.com/acquia/hub/fixtures"
 )
 
 func TestConfigService_TomlLoad(t *testing.T) {

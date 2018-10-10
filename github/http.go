@@ -14,8 +14,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/github/hub/ui"
-	"github.com/github/hub/utils"
+	"github.com/acquia/hub/ui"
+	"github.com/acquia/hub/utils"
 )
 
 const apiPayloadVersion = "application/vnd.github.v3+json;charset=utf-8"

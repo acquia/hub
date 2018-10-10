@@ -1,7 +1,7 @@
 package github
 
 import (
-	"github.com/github/hub/git"
+	"github.com/acquia/hub/git"
 )
 
 func IsHttpsProtocol() bool {
