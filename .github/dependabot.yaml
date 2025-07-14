@@ -1,29 +1,35 @@
 version: 2
 updates:
-  - package-ecosystem: "bundler"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    pull-request-branch-name:
-      separator: "-"
-    groups:
-      bundler-dependencies:
-        patterns:
-          - "*"
-    registries:
-      - jfrog
-
-  - package-ecosystem: "gomod"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    pull-request-branch-name:
-      separator: "-"
-    groups:
-      go-dependencies:
-        patterns:
-          - "*"
-
+- package-ecosystem: bundler
+  directory: /
+  schedule:
+    interval: weekly
+  pull-request-branch-name:
+    separator: "-"
+  groups:
+    bundler-dependencies:
+      patterns:
+      - "*"
+  registries:
+  - jfrog
+  ignore:
+  - update-types:
+    - version-update:semver-major
+  - dependency-name: "*"
+- package-ecosystem: gomod
+  directory: /
+  schedule:
+    interval: weekly
+  pull-request-branch-name:
+    separator: "-"
+  groups:
+    go-dependencies:
+      patterns:
+      - "*"
+  ignore:
+  - update-types:
+    - version-update:semver-major
+  - dependency-name: "*"
 registries:
   jfrog:
     type: docker-registry
